@@ -17,19 +17,35 @@ fun main() {
 }
 
 class TwoSum {
+
+    //My Solution
+//    fun twoSum(nums: IntArray, target: Int): IntArray {
+//        val mapa = mutableMapOf<Int, Int>()
+//        for (num in nums) {
+//            if (mapa[num] == null) mapa[num] = 1
+//            else mapa.replace(num, mapa[num]!! + 1)
+//        }
+//        mapa.forEach {
+//            val need = target - it.key
+//            if (need == it.key && it.value > 1) {
+//                return intArrayOf(nums.indexOf(it.key), nums.lastIndexOf(need))
+//            }
+//            if (need != it.key && mapa[need] != null) return intArrayOf(nums.indexOf(it.key), nums.indexOf(need))
+//        }
+//        return intArrayOf(-1, -1)
+//    }
+
+    //Solution proposed by https://neetcode.io/roadmap
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        val mapa = mutableMapOf<Int, Int>()
-        for (num in nums) {
-            if (mapa[num] == null) mapa[num] = 1
-            else mapa.replace(num, mapa[num]!! + 1)
-        }
-        mapa.forEach {
-            val need = target - it.key
-            if (need == it.key && it.value > 1) {
-                return intArrayOf(nums.indexOf(it.key), nums.lastIndexOf(need))
+        val numerosAnteriores: HashMap<Int, Int> = HashMap()
+        for (i in nums.indices) {
+            val num = nums[i]
+            val need = target - num
+            if (numerosAnteriores.containsKey(need)) {
+                return intArrayOf(numerosAnteriores[need]!!, i)
             }
-            if (need != it.key && mapa[need] != null) return intArrayOf(nums.indexOf(it.key), nums.indexOf(need))
+            numerosAnteriores[num] = i
         }
-        return intArrayOf(-1, -1)
+        return intArrayOf()
     }
 }
