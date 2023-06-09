@@ -1,4 +1,4 @@
-package two_sum
+package arrays.esay.two_sum
 
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime

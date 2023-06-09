@@ -1,4 +1,4 @@
-package valid_anagram
+package arrays.esay.valid_anagram
 
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime

@@ -2,7 +2,6 @@ fun main(args: Array<String>) {
     println("Hello World!")
     val sol = Solution()
     val intArray = intArrayOf(1,2,3,4,1)
-    val asd = setOf<Int>()
     println("El array a probar es: $intArray")
     println("El resutado fue ${sol.containsDuplicate(intArray)}")
 }
